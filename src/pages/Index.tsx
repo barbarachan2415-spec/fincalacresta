@@ -54,7 +54,7 @@ const Index = () => {
             </div>
             <div className="flex flex-col leading-tight">
               <span className="font-display text-lg font-semibold">Finca La Cresta</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-primary-foreground/80">Capira · Panamá</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-primary-foreground/80">Bejuco · Panamá Oeste</span>
             </div>
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-primary-foreground/90">
@@ -77,7 +77,7 @@ const Index = () => {
       <section className="relative min-h-[100svh] flex items-center overflow-hidden">
         <img
           src={heroFarm}
-          alt="Búfalos y vacas pastando en Finca La Cresta, Capira, Panamá"
+          alt="Búfalos y vacas pastando en Finca La Cresta, La Cresta, Bejuco, Panamá Oeste"
           width={1920}
           height={1080}
           className="absolute inset-0 h-full w-full object-cover"
@@ -89,13 +89,13 @@ const Index = () => {
           <div className="max-w-3xl animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 px-4 py-2 text-xs uppercase tracking-[0.2em] text-primary-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-              Sajalices · Capira · Panamá Oeste
+              La Cresta · Bejuco · Panamá Oeste
             </span>
             <h1 className="mt-6 font-display text-5xl md:text-7xl font-semibold text-primary-foreground leading-[1.05] text-balance">
               Leche fresca y natural <em className="not-italic text-accent">directamente</em> de nuestra finca
             </h1>
             <p className="mt-6 max-w-xl text-lg md:text-xl text-primary-foreground/85 leading-relaxed">
-              Producción responsable, calidad garantizada y distribución directa desde Capira.
+              Producción responsable, calidad garantizada y distribución directa desde La Cresta, Bejuco, Panamá Oeste.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Button asChild variant="whatsapp" size="xl">
@@ -149,7 +149,7 @@ const Index = () => {
             </h2>
             <div className="mt-8 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
-                <strong className="text-foreground font-semibold">Finca La Cresta</strong> fue adquirida hace aproximadamente 20 años. Hace 10 años iniciamos con la producción de leche de vaca, abasteciendo a lecherías en Panamá Oeste.
+                Ubicados en <strong className="text-foreground font-semibold">La Cresta, Bejuco, en Panamá Oeste</strong>, <strong className="text-foreground font-semibold">Finca La Cresta</strong> fue adquirida hace aproximadamente 20 años. Hace 10 años iniciamos con la producción de leche de vaca, abasteciendo a lecherías en Panamá Oeste.
               </p>
               <p>
                 Hace 5 años incorporamos la cría de búfalos, expandiendo nuestra producción a leche de búfalo, que actualmente distribuimos a pequeños negocios y queserías locales.
@@ -241,7 +241,7 @@ const Index = () => {
               { icon: Award, title: "+10 años de experiencia", desc: "Una década perfeccionando la producción láctea local." },
               { icon: ShieldCheck, title: "Supervisión del MIDA", desc: "Controles oficiales de salud y calidad de los animales." },
               { icon: CheckCircle2, title: "Producto fresco y confiable", desc: "Distribución directa, sin intermediarios ni demoras." },
-              { icon: MapPin, title: "Origen Capira", desc: "Desde Sajalices, corazón agrícola de Panamá Oeste." },
+              { icon: MapPin, title: "Origen Panamá Oeste", desc: "Desde La Cresta, Bejuco, corazón agrícola de Panamá Oeste." },
             ].map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
@@ -274,7 +274,7 @@ const Index = () => {
               {[
                 { icon: Truck, title: "Entrega directa", desc: "A queserías y negocios en Panamá Oeste." },
                 { icon: Clock, title: "Distribución desde 7:00 a.m.", desc: "Recibe tu producto fresco al inicio del día." },
-                { icon: MapPin, title: "Retiro en finca disponible", desc: "Visítanos en Sajalices, Capira." },
+                { icon: MapPin, title: "Retiro en finca disponible", desc: "Visítanos en La Cresta, Bejuco." },
                 { icon: CheckCircle2, title: "Flexibilidad según cliente", desc: "Volúmenes y horarios adaptados a tu operación." },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="flex gap-4 items-start">
@@ -374,7 +374,7 @@ const Index = () => {
               <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-6">
                 <MapPin className="h-6 w-6 text-accent" />
                 <p className="mt-3 text-xs uppercase tracking-wider text-primary-foreground/70">Ubicación</p>
-                <p className="font-semibold mt-1">Sajalices, Capira</p>
+                <p className="font-semibold mt-1">La Cresta, Bejuco</p>
                 <p className="text-sm text-primary-foreground/70">Panamá Oeste</p>
               </div>
               <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-6">
@@ -397,7 +397,7 @@ const Index = () => {
             </div>
             <span className="font-display text-base text-primary-foreground font-semibold">Finca La Cresta</span>
           </div>
-          <p>© {new Date().getFullYear()} Finca La Cresta · Sajalices, Capira, Panamá Oeste</p>
+          <p>© {new Date().getFullYear()} Finca La Cresta · La Cresta, Bejuco, Panamá Oeste</p>
         </div>
       </footer>
     </div>

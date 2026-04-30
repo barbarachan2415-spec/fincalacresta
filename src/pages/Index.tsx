@@ -135,7 +135,7 @@ const Index = () => {
         <div className="container grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-elegant">
-              <img src={galleryBuffalo} alt="Búfalo en pastizal" loading="lazy" width={1024} height={1024} className="w-full h-[520px] object-cover" />
+              <img src={galleryBuffalo} alt="Búfalo en pastizal" loading="lazy" decoding="async" width={1024} height={1024} className="w-full h-[520px] object-cover" />
             </div>
             <div className="absolute -bottom-8 -right-4 md:-right-8 bg-card rounded-2xl shadow-elegant p-6 max-w-[220px] border border-border">
               <Award className="h-8 w-8 text-accent" />
@@ -294,8 +294,8 @@ const Index = () => {
 
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
-              <img src={galleryFarm} alt="Pastizales de la finca" loading="lazy" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full" />
-              <img src={galleryMilk} alt="Leche fresca embotellada" loading="lazy" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full mt-12" />
+              <img src={galleryFarm} alt="Pastizales de la finca" loading="lazy" decoding="async" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full" />
+              <img src={galleryMilk} alt="Leche fresca embotellada" loading="lazy" decoding="async" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full mt-12" />
             </div>
           </div>
         </div>

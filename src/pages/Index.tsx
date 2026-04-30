@@ -80,6 +80,8 @@ const Index = () => {
           alt="Búfalos y vacas pastando en Finca La Cresta, La Cresta, Bejuco, Panamá Oeste"
           width={1920}
           height={1080}
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-hero" />

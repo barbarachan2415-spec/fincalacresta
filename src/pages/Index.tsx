@@ -33,6 +33,7 @@ const WhatsAppIcon = ({ className = "" }: { className?: string }) => (
 );
 
 const Index = () => {
+  useReveal();
   return (
     <div className="min-h-screen bg-background">
       {/* Floating WhatsApp button */}

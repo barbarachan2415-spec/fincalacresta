@@ -18,6 +18,7 @@ import galleryBuffalo from "@/assets/gallery-buffalo.jpg";
 import galleryMilk from "@/assets/gallery-milk.jpg";
 import galleryFarm from "@/assets/gallery-farm.jpg";
 import galleryCow from "@/assets/gallery-cow.jpg";
+import { useReveal } from "@/hooks/use-reveal";
 
 const WHATSAPP_NUMBER = "50766785280";
 const WHATSAPP_MESSAGE = encodeURIComponent(

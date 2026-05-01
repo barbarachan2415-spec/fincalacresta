@@ -105,16 +105,33 @@ const Index = () => {
               La Cresta · Bejuco · Panamá Oeste
             </span>
             <h1 className="mt-5 md:mt-6 font-display text-4xl sm:text-5xl md:text-7xl font-semibold text-primary-foreground leading-[1.05] text-balance">
-              Leche fresca y natural <em className="not-italic text-accent">directamente</em> de nuestra finca
+              Leche fresca de búfalo y vaca <em className="not-italic text-accent">directo</em> de nuestra finca
             </h1>
             <p className="mt-5 md:mt-6 max-w-xl text-base sm:text-lg md:text-xl text-primary-foreground/85 leading-relaxed">
-              Producción responsable, calidad garantizada y distribución directa desde La Cresta, Bejuco, Panamá Oeste.
+              Proveedor confiable para queserías y negocios en Panamá Oeste. Producción natural, supervisada por el MIDA y entregada fresca desde las 7:00 a.m.
             </p>
+
+            <ul className="mt-6 flex flex-wrap gap-2" aria-label="Sellos de confianza">
+              {[
+                { icon: ShieldCheck, label: "Supervisión MIDA" },
+                { icon: Leaf, label: "100% Natural" },
+                { icon: Award, label: "+10 años de experiencia" },
+              ].map(({ icon: Icon, label }) => (
+                <li
+                  key={label}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 px-3 py-1.5 text-[11px] md:text-xs font-medium text-primary-foreground"
+                >
+                  <Icon className="h-3.5 w-3.5 text-accent" aria-hidden="true" />
+                  {label}
+                </li>
+              ))}
+            </ul>
+
             <div className="mt-8 md:mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4">
               <Button asChild variant="whatsapp" size="xl" className="w-full sm:w-auto">
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Pedir cotización por WhatsApp">
                   <WhatsAppIcon className="h-5 w-5" />
-                  Escríbenos por WhatsApp
+                  Pedir cotización por WhatsApp
                 </a>
               </Button>
               <a

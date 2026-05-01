@@ -131,11 +131,11 @@ const Index = () => {
       </section>
 
       {/* SOBRE NOSOTROS */}
-      <section id="nosotros" className="py-24 md:py-32 bg-gradient-cream">
-        <div className="container grid lg:grid-cols-12 gap-12 items-center">
+      <section id="nosotros" className="section-padding bg-gradient-cream">
+        <div className="container grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-elegant">
-              <img src={galleryBuffalo} alt="Búfalo en pastizal" loading="lazy" decoding="async" width={1024} height={1024} className="w-full h-[520px] object-cover" />
+              <img src={galleryBuffalo} alt="Búfalo en pastizal" loading="lazy" decoding="async" width={1024} height={1024} className="w-full aspect-[4/5] object-cover" />
             </div>
             <div className="absolute -bottom-8 -right-4 md:-right-8 bg-card rounded-2xl shadow-elegant p-6 max-w-[220px] border border-border">
               <Award className="h-8 w-8 text-accent" />
@@ -165,7 +165,7 @@ const Index = () => {
       </section>
 
       {/* PRODUCTOS */}
-      <section id="productos" className="py-24 md:py-32 bg-background">
+      <section id="productos" className="section-padding bg-background">
         <div className="container">
           <div className="max-w-2xl">
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Productos</span>
@@ -203,7 +203,7 @@ const Index = () => {
             ].map((p) => (
               <article
                 key={p.title}
-                className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-soft hover:shadow-elegant transition-smooth hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-soft hover:shadow-elegant transition-smooth hover:-translate-y-1 hover:border-primary/20 flex flex-col"
               >
                 <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${p.accent}`} />
                 <div className="flex items-start justify-between">
@@ -223,7 +223,7 @@ const Index = () => {
       </section>
 
       {/* DIFERENCIADORES */}
-      <section id="diferenciadores" className="py-24 md:py-32 bg-primary text-primary-foreground relative overflow-hidden">
+      <section id="diferenciadores" className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)',
           backgroundSize: '32px 32px'
@@ -247,7 +247,7 @@ const Index = () => {
             ].map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="group rounded-3xl border border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur-sm p-8 hover:bg-primary-foreground/10 hover:border-accent/40 transition-smooth"
+                className="group rounded-3xl border border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur-sm p-8 hover:bg-primary-foreground/10 hover:border-accent/40 hover:-translate-y-1 transition-smooth"
               >
                 <div className="h-12 w-12 rounded-xl bg-accent flex items-center justify-center text-accent-foreground group-hover:scale-110 transition-smooth">
                   <Icon className="h-6 w-6" />
@@ -261,8 +261,8 @@ const Index = () => {
       </section>
 
       {/* SERVICIOS */}
-      <section id="servicios" className="py-24 md:py-32 bg-gradient-cream">
-        <div className="container grid lg:grid-cols-2 gap-16 items-center">
+      <section id="servicios" className="section-padding bg-gradient-cream">
+        <div className="container grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Servicios</span>
             <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
@@ -280,10 +280,10 @@ const Index = () => {
                 { icon: CheckCircle2, title: "Flexibilidad según cliente", desc: "Volúmenes y horarios adaptados a tu operación." },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="flex gap-4 items-start">
-                  <div className="flex-shrink-0 h-12 w-12 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center">
+                  <div className="flex-shrink-0 h-12 w-12 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shadow-soft">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <div>
+                  <div className="pt-1">
                     <h3 className="font-display text-lg font-semibold text-foreground">{title}</h3>
                     <p className="text-muted-foreground">{desc}</p>
                   </div>
@@ -293,16 +293,16 @@ const Index = () => {
           </div>
 
           <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 md:gap-5">
               <img src={galleryFarm} alt="Pastizales de la finca" loading="lazy" decoding="async" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full" />
-              <img src={galleryMilk} alt="Leche fresca embotellada" loading="lazy" decoding="async" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full mt-12" />
+              <img src={galleryMilk} alt="Leche fresca embotellada" loading="lazy" decoding="async" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full mt-10 md:mt-12" />
             </div>
           </div>
         </div>
       </section>
 
       {/* GALERÍA */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="section-padding bg-background">
         <div className="container">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
@@ -324,11 +324,12 @@ const Index = () => {
               { src: galleryMilk, alt: "Leche fresca", span: "aspect-square" },
               { src: heroFarm, alt: "Animales pastando al amanecer", span: "aspect-square" },
             ].map((img, i) => (
-              <div key={i} className={`overflow-hidden rounded-2xl group ${img.span}`}>
+              <div key={i} className={`overflow-hidden rounded-2xl group shadow-soft hover:shadow-elegant transition-smooth ${img.span}`}>
                 <img
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover group-hover:scale-105 transition-smooth duration-700"
                 />
               </div>
@@ -338,7 +339,7 @@ const Index = () => {
       </section>
 
       {/* CTA FINAL */}
-      <section id="contacto" className="py-24 md:py-32 relative overflow-hidden">
+      <section id="contacto" className="section-padding relative overflow-hidden">
         <img src={heroFarm} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-primary/85" />
         <div className="container relative">
@@ -367,19 +368,19 @@ const Index = () => {
               </a>
             </div>
 
-            <div className="mt-16 grid sm:grid-cols-3 gap-6 text-left">
-              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-6">
+            <div className="mt-16 grid sm:grid-cols-3 gap-5 text-left">
+              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
                 <MessageCircle className="h-6 w-6 text-accent" />
                 <p className="mt-3 text-xs uppercase tracking-wider text-primary-foreground/70">WhatsApp</p>
                 <p className="font-semibold mt-1">+507 6678-5280</p>
               </div>
-              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-6">
+              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
                 <MapPin className="h-6 w-6 text-accent" />
                 <p className="mt-3 text-xs uppercase tracking-wider text-primary-foreground/70">Ubicación</p>
                 <p className="font-semibold mt-1">La Cresta, Bejuco</p>
                 <p className="text-sm text-primary-foreground/70">Panamá Oeste</p>
               </div>
-              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-6">
+              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
                 <Clock className="h-6 w-6 text-accent" />
                 <p className="mt-3 text-xs uppercase tracking-wider text-primary-foreground/70">Distribución</p>
                 <p className="font-semibold mt-1">Desde 7:00 a.m.</p>

@@ -47,14 +47,14 @@ const Index = () => {
 
       {/* NAV */}
       <header className="absolute top-0 left-0 right-0 z-30">
-        <nav className="container flex items-center justify-between py-6">
-          <a href="#" className="flex items-center gap-2 text-primary-foreground">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent">
-              <Leaf className="h-5 w-5 text-accent-foreground" />
+        <nav className="container flex items-center justify-between py-5 md:py-6 gap-3">
+          <a href="#" className="flex items-center gap-2 text-primary-foreground min-w-0">
+            <div className="flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-full bg-accent flex-shrink-0">
+              <Leaf className="h-4 w-4 md:h-5 md:w-5 text-accent-foreground" />
             </div>
-            <div className="flex flex-col leading-tight">
-              <span className="font-display text-lg font-semibold">Finca La Cresta</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-primary-foreground/80">Bejuco · Panamá Oeste</span>
+            <div className="flex flex-col leading-tight min-w-0">
+              <span className="font-display text-base md:text-lg font-semibold truncate">Finca La Cresta</span>
+              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.18em] md:tracking-[0.2em] text-primary-foreground/80 truncate">Bejuco · Panamá Oeste</span>
             </div>
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-primary-foreground/90">
@@ -64,10 +64,10 @@ const Index = () => {
             <a href="#servicios" className="hover:text-accent transition-smooth">Servicios</a>
             <a href="#contacto" className="hover:text-accent transition-smooth">Contacto</a>
           </div>
-          <Button asChild variant="hero" size="default" className="hidden sm:inline-flex rounded-full">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+          <Button asChild variant="hero" size="sm" className="rounded-full md:size-default flex-shrink-0">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
               <WhatsAppIcon className="h-4 w-4" />
-              WhatsApp
+              <span className="hidden xs:inline sm:inline">WhatsApp</span>
             </a>
           </Button>
         </nav>

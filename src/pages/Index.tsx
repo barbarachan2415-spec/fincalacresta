@@ -95,8 +95,8 @@ const Index = () => {
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/30" />
+        <div className="absolute inset-0 bg-gradient-hero" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/30" aria-hidden="true" />
 
         <div className="container relative z-10 pt-28 md:pt-32 pb-24 md:pb-20">
           <div className="max-w-3xl animate-fade-up">

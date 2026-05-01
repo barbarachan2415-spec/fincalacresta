@@ -135,7 +135,7 @@ const Index = () => {
       {/* SOBRE NOSOTROS */}
       <section id="nosotros" className="section-padding bg-gradient-cream">
         <div className="container grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <div className="lg:col-span-5 relative mb-10 lg:mb-0">
+          <div className="lg:col-span-5 relative mb-10 lg:mb-0" data-reveal>
             <div className="relative rounded-3xl overflow-hidden shadow-elegant">
               <img src={galleryBuffalo} alt="Búfalo en pastizal" loading="lazy" decoding="async" width={1024} height={1024} className="w-full aspect-[4/5] object-cover" />
             </div>
@@ -146,7 +146,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-7 lg:pl-8">
+          <div className="lg:col-span-7 lg:pl-8" data-reveal data-reveal-delay="1">
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Sobre Nosotros</span>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
               Una historia de campo, familia y constancia.
@@ -169,7 +169,7 @@ const Index = () => {
       {/* PRODUCTOS */}
       <section id="productos" className="section-padding bg-background">
         <div className="container">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl" data-reveal>
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Productos</span>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
               Leche fresca, directa del pastizal.
@@ -202,9 +202,11 @@ const Index = () => {
                 tagClass: "bg-accent text-accent-foreground",
                 accent: "from-accent to-accent",
               },
-            ].map((p) => (
+            ].map((p, i) => (
               <article
                 key={p.title}
+                data-reveal
+                data-reveal-delay={String(i + 1)}
                 className="group relative overflow-hidden rounded-3xl border border-border bg-card p-6 md:p-8 shadow-soft hover:shadow-elegant transition-smooth hover:-translate-y-1 hover:border-primary/20 flex flex-col sm:last:[&:nth-child(odd)]:col-span-2 md:last:[&:nth-child(odd)]:col-span-1"
               >
                 <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${p.accent}`} />
@@ -231,7 +233,7 @@ const Index = () => {
           backgroundSize: '32px 32px'
         }} />
         <div className="container relative">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl" data-reveal>
             <span className="text-xs uppercase tracking-[0.25em] text-accent font-semibold">¿Por qué elegirnos?</span>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-balance">
               Calidad que se nota desde el pasto hasta tu negocio.
@@ -246,9 +248,11 @@ const Index = () => {
               { icon: ShieldCheck, title: "Supervisión del MIDA", desc: "Controles oficiales de salud y calidad de los animales." },
               { icon: CheckCircle2, title: "Producto fresco y confiable", desc: "Distribución directa, sin intermediarios ni demoras." },
               { icon: MapPin, title: "Origen Panamá Oeste", desc: "Desde La Cresta, Bejuco, corazón agrícola de Panamá Oeste." },
-            ].map(({ icon: Icon, title, desc }) => (
+            ].map(({ icon: Icon, title, desc }, i) => (
               <div
                 key={title}
+                data-reveal
+                data-reveal-delay={String((i % 3) + 1)}
                 className="group rounded-3xl border border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur-sm p-6 md:p-8 hover:bg-primary-foreground/10 hover:border-accent/40 hover:-translate-y-1 transition-smooth"
               >
                 <div className="h-12 w-12 rounded-xl bg-accent flex items-center justify-center text-accent-foreground group-hover:scale-110 transition-smooth">

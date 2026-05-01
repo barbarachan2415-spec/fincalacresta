@@ -237,7 +237,7 @@ const Index = () => {
 
       {/* DIFERENCIADORES */}
       <section id="diferenciadores" className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{
+        <div aria-hidden="true" className="absolute inset-0 opacity-10" style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)',
           backgroundSize: '32px 32px'
         }} />
@@ -361,7 +361,7 @@ const Index = () => {
       {/* CTA FINAL */}
       <section id="contacto" className="section-padding relative overflow-hidden">
         <img src={heroFarm} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-primary/85" />
+        <div className="absolute inset-0 bg-primary/85" aria-hidden="true" />
         <div className="container relative">
           <div className="max-w-3xl mx-auto text-center text-primary-foreground" data-reveal>
             <span className="inline-block text-[11px] md:text-xs uppercase tracking-[0.25em] md:tracking-[0.3em] text-accent font-semibold">Trabajemos juntos</span>

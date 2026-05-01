@@ -87,20 +87,20 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/30" />
 
-        <div className="container relative z-10 pt-32 pb-20">
+        <div className="container relative z-10 pt-28 md:pt-32 pb-24 md:pb-20">
           <div className="max-w-3xl animate-fade-up">
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 px-4 py-2 text-xs uppercase tracking-[0.2em] text-primary-foreground">
+            <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 px-3 py-1.5 md:px-4 md:py-2 text-[10px] md:text-xs uppercase tracking-[0.18em] md:tracking-[0.2em] text-primary-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
               La Cresta · Bejuco · Panamá Oeste
             </span>
-            <h1 className="mt-6 font-display text-5xl md:text-7xl font-semibold text-primary-foreground leading-[1.05] text-balance">
+            <h1 className="mt-5 md:mt-6 font-display text-4xl sm:text-5xl md:text-7xl font-semibold text-primary-foreground leading-[1.05] text-balance">
               Leche fresca y natural <em className="not-italic text-accent">directamente</em> de nuestra finca
             </h1>
-            <p className="mt-6 max-w-xl text-lg md:text-xl text-primary-foreground/85 leading-relaxed">
+            <p className="mt-5 md:mt-6 max-w-xl text-base sm:text-lg md:text-xl text-primary-foreground/85 leading-relaxed">
               Producción responsable, calidad garantizada y distribución directa desde La Cresta, Bejuco, Panamá Oeste.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Button asChild variant="whatsapp" size="xl">
+            <div className="mt-8 md:mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-4">
+              <Button asChild variant="whatsapp" size="xl" className="w-full sm:w-auto">
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <WhatsAppIcon className="h-5 w-5" />
                   Escríbenos por WhatsApp
@@ -108,21 +108,21 @@ const Index = () => {
               </Button>
               <a
                 href="#productos"
-                className="inline-flex items-center gap-2 text-primary-foreground hover:text-accent transition-smooth font-medium"
+                className="inline-flex items-center justify-center gap-2 text-primary-foreground hover:text-accent transition-smooth font-medium py-2"
               >
                 Ver productos <ArrowRight className="h-4 w-4" />
               </a>
             </div>
 
-            <div className="mt-16 grid grid-cols-3 gap-6 max-w-xl">
+            <div className="mt-12 md:mt-16 grid grid-cols-3 gap-3 sm:gap-6 max-w-xl">
               {[
                 { n: "20+", l: "Años de finca" },
                 { n: "100+", l: "Animales" },
                 { n: "10+", l: "Años produciendo leche" },
               ].map((s) => (
-                <div key={s.l} className="border-l-2 border-accent pl-4">
-                  <div className="font-display text-3xl md:text-4xl font-semibold text-primary-foreground">{s.n}</div>
-                  <div className="text-xs uppercase tracking-wider text-primary-foreground/70 mt-1">{s.l}</div>
+                <div key={s.l} className="border-l-2 border-accent pl-3 sm:pl-4">
+                  <div className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-primary-foreground">{s.n}</div>
+                  <div className="text-[10px] sm:text-xs uppercase tracking-wider text-primary-foreground/70 mt-1 leading-tight">{s.l}</div>
                 </div>
               ))}
             </div>

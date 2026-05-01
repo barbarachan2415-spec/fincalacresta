@@ -83,8 +83,9 @@ const Index = () => {
         </nav>
       </header>
 
+      <main id="main">
       {/* HERO */}
-      <section className="relative min-h-[100svh] flex items-center overflow-hidden">
+      <section className="relative min-h-[100svh] flex items-center overflow-hidden" aria-label="Bienvenida">
         <img
           src={heroFarm}
           alt="Búfalos y vacas pastando en Finca La Cresta, La Cresta, Bejuco, Panamá Oeste"

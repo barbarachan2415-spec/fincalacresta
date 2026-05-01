@@ -13,11 +13,11 @@ import {
   Milk,
   ArrowRight,
 } from "lucide-react";
-import heroFarm from "@/assets/hero-farm.jpg";
-import galleryBuffalo from "@/assets/gallery-buffalo.jpg";
-import galleryMilk from "@/assets/gallery-milk.jpg";
-import galleryFarm from "@/assets/gallery-farm.jpg";
-import galleryCow from "@/assets/gallery-cow.jpg";
+import heroFarm from "@/assets/hero-farm.webp";
+import galleryBuffalo from "@/assets/gallery-buffalo.webp";
+import galleryMilk from "@/assets/gallery-milk.webp";
+import galleryFarm from "@/assets/gallery-farm.webp";
+import galleryCow from "@/assets/gallery-cow.webp";
 import { useReveal } from "@/hooks/use-reveal";
 
 const WHATSAPP_NUMBER = "50766785280";
@@ -36,12 +36,20 @@ const Index = () => {
   useReveal();
   return (
     <div className="min-h-screen bg-background">
+      {/* Skip to content for keyboard users */}
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-md focus:bg-primary focus:text-primary-foreground focus:shadow-elegant"
+      >
+        Saltar al contenido
+      </a>
+
       {/* Floating WhatsApp button */}
       <a
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contactar por WhatsApp"
+        aria-label="Contactar a Finca La Cresta por WhatsApp"
         className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-glow hover:scale-110 transition-smooth animate-float"
       >
         <WhatsAppIcon className="h-6 w-6 md:h-7 md:w-7" />
@@ -49,8 +57,8 @@ const Index = () => {
 
       {/* NAV */}
       <header className="absolute top-0 left-0 right-0 z-30">
-        <nav className="container flex items-center justify-between py-5 md:py-6 gap-3">
-          <a href="#" className="flex items-center gap-2 text-primary-foreground min-w-0">
+        <nav className="container flex items-center justify-between py-5 md:py-6 gap-3" aria-label="Principal">
+          <a href="#" className="flex items-center gap-2 text-primary-foreground min-w-0" aria-label="Finca La Cresta — Inicio">
             <div className="flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-full bg-accent flex-shrink-0">
               <Leaf className="h-4 w-4 md:h-5 md:w-5 text-accent-foreground" />
             </div>
@@ -75,8 +83,9 @@ const Index = () => {
         </nav>
       </header>
 
+      <main id="main">
       {/* HERO */}
-      <section className="relative min-h-[100svh] flex items-center overflow-hidden">
+      <section className="relative min-h-[100svh] flex items-center overflow-hidden" aria-label="Bienvenida">
         <img
           src={heroFarm}
           alt="Búfalos y vacas pastando en Finca La Cresta, La Cresta, Bejuco, Panamá Oeste"
@@ -86,8 +95,8 @@ const Index = () => {
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/30" />
+        <div className="absolute inset-0 bg-gradient-hero" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/30" aria-hidden="true" />
 
         <div className="container relative z-10 pt-28 md:pt-32 pb-24 md:pb-20">
           <div className="max-w-3xl animate-fade-up">
@@ -228,7 +237,7 @@ const Index = () => {
 
       {/* DIFERENCIADORES */}
       <section id="diferenciadores" className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{
+        <div aria-hidden="true" className="absolute inset-0 opacity-10" style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)',
           backgroundSize: '32px 32px'
         }} />
@@ -352,7 +361,7 @@ const Index = () => {
       {/* CTA FINAL */}
       <section id="contacto" className="section-padding relative overflow-hidden">
         <img src={heroFarm} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-primary/85" />
+        <div className="absolute inset-0 bg-primary/85" aria-hidden="true" />
         <div className="container relative">
           <div className="max-w-3xl mx-auto text-center text-primary-foreground" data-reveal>
             <span className="inline-block text-[11px] md:text-xs uppercase tracking-[0.25em] md:tracking-[0.3em] text-accent font-semibold">Trabajemos juntos</span>
@@ -401,6 +410,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </main>
 
       {/* FOOTER */}
       <footer className="bg-primary text-primary-foreground/80 py-8 md:py-10 pb-24 md:pb-10 border-t border-primary-foreground/10">

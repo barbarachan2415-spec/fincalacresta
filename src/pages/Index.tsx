@@ -40,9 +40,9 @@ const Index = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-glow hover:scale-110 transition-smooth animate-float"
+        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-glow hover:scale-110 transition-smooth animate-float"
       >
-        <WhatsAppIcon className="h-7 w-7" />
+        <WhatsAppIcon className="h-6 w-6 md:h-7 md:w-7" />
       </a>
 
       {/* NAV */}
@@ -133,23 +133,23 @@ const Index = () => {
       {/* SOBRE NOSOTROS */}
       <section id="nosotros" className="section-padding bg-gradient-cream">
         <div className="container grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative mb-10 lg:mb-0">
             <div className="relative rounded-3xl overflow-hidden shadow-elegant">
               <img src={galleryBuffalo} alt="Búfalo en pastizal" loading="lazy" decoding="async" width={1024} height={1024} className="w-full aspect-[4/5] object-cover" />
             </div>
-            <div className="absolute -bottom-8 -right-4 md:-right-8 bg-card rounded-2xl shadow-elegant p-6 max-w-[220px] border border-border">
-              <Award className="h-8 w-8 text-accent" />
-              <p className="mt-3 font-display text-lg font-semibold text-foreground leading-tight">Rumbo a leche grado A</p>
-              <p className="text-xs text-muted-foreground mt-1">Estándares en crecimiento continuo</p>
+            <div className="absolute -bottom-6 right-3 md:-bottom-8 md:-right-8 bg-card rounded-2xl shadow-elegant p-4 md:p-6 max-w-[180px] md:max-w-[220px] border border-border">
+              <Award className="h-7 w-7 md:h-8 md:w-8 text-accent" />
+              <p className="mt-2 md:mt-3 font-display text-base md:text-lg font-semibold text-foreground leading-tight">Rumbo a leche grado A</p>
+              <p className="text-[11px] md:text-xs text-muted-foreground mt-1">Estándares en crecimiento continuo</p>
             </div>
           </div>
 
           <div className="lg:col-span-7 lg:pl-8">
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Sobre Nosotros</span>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
               Una historia de campo, familia y constancia.
             </h2>
-            <div className="mt-8 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+            <div className="mt-6 md:mt-8 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
                 Ubicados en <strong className="text-foreground font-semibold">La Cresta, Bejuco, en Panamá Oeste</strong>, <strong className="text-foreground font-semibold">Finca La Cresta</strong> fue adquirida hace aproximadamente 20 años. Hace 10 años iniciamos con la producción de leche de vaca, abasteciendo a lecherías en Panamá Oeste.
               </p>
@@ -169,15 +169,15 @@ const Index = () => {
         <div className="container">
           <div className="max-w-2xl">
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Productos</span>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
               Leche fresca, directa del pastizal.
             </h2>
-            <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
+            <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
               Ofrecemos leche fresca de alta calidad, producida de forma natural y distribuida directamente desde nuestra finca.
             </p>
           </div>
 
-          <div className="mt-16 grid md:grid-cols-3 gap-6">
+          <div className="mt-12 md:mt-16 grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
             {[
               {
                 title: "Leche de Búfalo",
@@ -203,19 +203,19 @@ const Index = () => {
             ].map((p) => (
               <article
                 key={p.title}
-                className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-soft hover:shadow-elegant transition-smooth hover:-translate-y-1 hover:border-primary/20 flex flex-col"
+                className="group relative overflow-hidden rounded-3xl border border-border bg-card p-6 md:p-8 shadow-soft hover:shadow-elegant transition-smooth hover:-translate-y-1 hover:border-primary/20 flex flex-col sm:last:[&:nth-child(odd)]:col-span-2 md:last:[&:nth-child(odd)]:col-span-1"
               >
                 <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${p.accent}`} />
-                <div className="flex items-start justify-between">
-                  <div className="h-14 w-14 rounded-2xl bg-secondary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
-                    <Milk className="h-7 w-7" />
+                <div className="flex items-start justify-between gap-3">
+                  <div className="h-12 w-12 md:h-14 md:w-14 rounded-2xl bg-secondary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-smooth flex-shrink-0">
+                    <Milk className="h-6 w-6 md:h-7 md:w-7" />
                   </div>
-                  <span className={`text-[10px] uppercase tracking-wider px-3 py-1 rounded-full font-semibold ${p.tagClass}`}>
+                  <span className={`text-[10px] uppercase tracking-wider px-3 py-1 rounded-full font-semibold whitespace-nowrap ${p.tagClass}`}>
                     {p.tag}
                   </span>
                 </div>
-                <h3 className="mt-6 font-display text-2xl font-semibold text-foreground">{p.title}</h3>
-                <p className="mt-3 text-muted-foreground leading-relaxed">{p.desc}</p>
+                <h3 className="mt-5 md:mt-6 font-display text-xl md:text-2xl font-semibold text-foreground">{p.title}</h3>
+                <p className="mt-2 md:mt-3 text-sm md:text-base text-muted-foreground leading-relaxed">{p.desc}</p>
               </article>
             ))}
           </div>
@@ -231,12 +231,12 @@ const Index = () => {
         <div className="container relative">
           <div className="max-w-2xl">
             <span className="text-xs uppercase tracking-[0.25em] text-accent font-semibold">¿Por qué elegirnos?</span>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold leading-tight text-balance">
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-balance">
               Calidad que se nota desde el pasto hasta tu negocio.
             </h2>
           </div>
 
-          <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {[
               { icon: Leaf, title: "100% Natural", desc: "Sin químicos ni pesticidas. Producción limpia y responsable." },
               { icon: Sprout, title: "Alimentación a base de pasto", desc: "Animales criados libremente con pasto fresco panameño." },
@@ -247,12 +247,12 @@ const Index = () => {
             ].map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="group rounded-3xl border border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur-sm p-8 hover:bg-primary-foreground/10 hover:border-accent/40 hover:-translate-y-1 transition-smooth"
+                className="group rounded-3xl border border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur-sm p-6 md:p-8 hover:bg-primary-foreground/10 hover:border-accent/40 hover:-translate-y-1 transition-smooth"
               >
                 <div className="h-12 w-12 rounded-xl bg-accent flex items-center justify-center text-accent-foreground group-hover:scale-110 transition-smooth">
                   <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="mt-5 font-display text-xl font-semibold">{title}</h3>
+                <h3 className="mt-4 md:mt-5 font-display text-lg md:text-xl font-semibold">{title}</h3>
                 <p className="mt-2 text-sm text-primary-foreground/75 leading-relaxed">{desc}</p>
               </div>
             ))}
@@ -265,14 +265,14 @@ const Index = () => {
         <div className="container grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Servicios</span>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
               Distribución directa, flexible y puntual.
             </h2>
-            <p className="mt-5 text-lg text-muted-foreground">
+            <p className="mt-5 text-base md:text-lg text-muted-foreground">
               Nos adaptamos a las necesidades de cada cliente para garantizar un suministro confiable.
             </p>
 
-            <div className="mt-10 space-y-5">
+            <div className="mt-8 md:mt-10 space-y-5">
               {[
                 { icon: Truck, title: "Entrega directa", desc: "A queserías y negocios en Panamá Oeste." },
                 { icon: Clock, title: "Distribución desde 7:00 a.m.", desc: "Recibe tu producto fresco al inicio del día." },
@@ -280,12 +280,12 @@ const Index = () => {
                 { icon: CheckCircle2, title: "Flexibilidad según cliente", desc: "Volúmenes y horarios adaptados a tu operación." },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="flex gap-4 items-start">
-                  <div className="flex-shrink-0 h-12 w-12 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shadow-soft">
+                  <div className="flex-shrink-0 h-11 w-11 md:h-12 md:w-12 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shadow-soft">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <div className="pt-1">
-                    <h3 className="font-display text-lg font-semibold text-foreground">{title}</h3>
-                    <p className="text-muted-foreground">{desc}</p>
+                  <div className="pt-1 min-w-0">
+                    <h3 className="font-display text-base md:text-lg font-semibold text-foreground">{title}</h3>
+                    <p className="text-sm md:text-base text-muted-foreground">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -304,21 +304,21 @@ const Index = () => {
       {/* GALERÍA */}
       <section className="section-padding bg-background">
         <div className="container">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-10 md:mb-12">
             <div>
               <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Galería</span>
-              <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
+              <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
                 Un día en Finca La Cresta.
               </h2>
             </div>
-            <p className="text-muted-foreground max-w-md">
+            <p className="text-base md:text-base text-muted-foreground max-w-md">
               Animales sanos, pastos verdes y un proceso cuidado de principio a fin.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { src: galleryBuffalo, alt: "Búfalo de la finca", span: "md:col-span-2 md:row-span-2 aspect-square md:aspect-auto md:h-full" },
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          {[
+              { src: galleryBuffalo, alt: "Búfalo de la finca", span: "col-span-2 md:col-span-2 md:row-span-2 aspect-[4/3] md:aspect-auto md:h-full" },
               { src: galleryFarm, alt: "Vista de la finca", span: "aspect-square" },
               { src: galleryCow, alt: "Vaca lechera", span: "aspect-square" },
               { src: galleryMilk, alt: "Leche fresca", span: "aspect-square" },
@@ -344,16 +344,16 @@ const Index = () => {
         <div className="absolute inset-0 bg-primary/85" />
         <div className="container relative">
           <div className="max-w-3xl mx-auto text-center text-primary-foreground">
-            <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-semibold">Trabajemos juntos</span>
-            <h2 className="mt-5 font-display text-4xl md:text-6xl font-semibold leading-[1.05] text-balance">
+            <span className="inline-block text-[11px] md:text-xs uppercase tracking-[0.25em] md:tracking-[0.3em] text-accent font-semibold">Trabajemos juntos</span>
+            <h2 className="mt-4 md:mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-semibold leading-[1.05] text-balance">
               ¿Buscas un proveedor confiable de leche fresca?
             </h2>
-            <p className="mt-6 text-lg md:text-xl text-primary-foreground/85 leading-relaxed">
+            <p className="mt-5 md:mt-6 text-base sm:text-lg md:text-xl text-primary-foreground/85 leading-relaxed">
               Contáctanos directamente y forma parte de nuestra red de clientes en Panamá Oeste.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild variant="whatsapp" size="xl">
+            <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
+              <Button asChild variant="whatsapp" size="xl" className="w-full sm:w-auto">
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <WhatsAppIcon className="h-5 w-5" />
                   Contactar por WhatsApp
@@ -361,26 +361,26 @@ const Index = () => {
               </Button>
               <a
                 href="tel:+50766785280"
-                className="inline-flex items-center gap-3 text-primary-foreground hover:text-accent transition-smooth font-medium"
+                className="inline-flex items-center justify-center gap-3 text-primary-foreground hover:text-accent transition-smooth font-medium py-2"
               >
                 <Phone className="h-5 w-5" />
                 +507 6678-5280
               </a>
             </div>
 
-            <div className="mt-16 grid sm:grid-cols-3 gap-5 text-left">
-              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
+            <div className="mt-12 md:mt-16 grid sm:grid-cols-3 gap-4 md:gap-5 text-left">
+              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
                 <MessageCircle className="h-6 w-6 text-accent" />
                 <p className="mt-3 text-xs uppercase tracking-wider text-primary-foreground/70">WhatsApp</p>
-                <p className="font-semibold mt-1">+507 6678-5280</p>
+                <p className="font-semibold mt-1 break-words">+507 6678-5280</p>
               </div>
-              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
+              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
                 <MapPin className="h-6 w-6 text-accent" />
                 <p className="mt-3 text-xs uppercase tracking-wider text-primary-foreground/70">Ubicación</p>
                 <p className="font-semibold mt-1">La Cresta, Bejuco</p>
                 <p className="text-sm text-primary-foreground/70">Panamá Oeste</p>
               </div>
-              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
+              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
                 <Clock className="h-6 w-6 text-accent" />
                 <p className="mt-3 text-xs uppercase tracking-wider text-primary-foreground/70">Distribución</p>
                 <p className="font-semibold mt-1">Desde 7:00 a.m.</p>
@@ -392,8 +392,8 @@ const Index = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-primary text-primary-foreground/80 py-10 border-t border-primary-foreground/10">
-        <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+      <footer className="bg-primary text-primary-foreground/80 py-8 md:py-10 pb-24 md:pb-10 border-t border-primary-foreground/10">
+        <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-center md:text-left">
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent">
               <Leaf className="h-4 w-4 text-accent-foreground" />

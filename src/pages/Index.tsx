@@ -269,7 +269,7 @@ const Index = () => {
       {/* SERVICIOS */}
       <section id="servicios" className="section-padding bg-gradient-cream">
         <div className="container grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
+          <div data-reveal>
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Servicios</span>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
               Distribución directa, flexible y puntual.
@@ -284,8 +284,8 @@ const Index = () => {
                 { icon: Clock, title: "Distribución desde 7:00 a.m.", desc: "Recibe tu producto fresco al inicio del día." },
                 { icon: MapPin, title: "Retiro en finca disponible", desc: "Visítanos en La Cresta, Bejuco." },
                 { icon: CheckCircle2, title: "Flexibilidad según cliente", desc: "Volúmenes y horarios adaptados a tu operación." },
-              ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="flex gap-4 items-start">
+              ].map(({ icon: Icon, title, desc }, i) => (
+                <div key={title} data-reveal data-reveal-delay={String(i + 1)} className="flex gap-4 items-start">
                   <div className="flex-shrink-0 h-11 w-11 md:h-12 md:w-12 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shadow-soft">
                     <Icon className="h-5 w-5" />
                   </div>
@@ -298,10 +298,10 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative" data-reveal data-reveal-delay="2">
             <div className="grid grid-cols-2 gap-4 md:gap-5">
-              <img src={galleryFarm} alt="Pastizales de la finca" loading="lazy" decoding="async" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full" />
-              <img src={galleryMilk} alt="Leche fresca embotellada" loading="lazy" decoding="async" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full mt-10 md:mt-12" />
+              <img src={galleryFarm} alt="Pastizales de la finca" loading="lazy" decoding="async" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full transition-transform duration-700 hover:scale-[1.02]" />
+              <img src={galleryMilk} alt="Leche fresca embotellada" loading="lazy" decoding="async" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full mt-10 md:mt-12 transition-transform duration-700 hover:scale-[1.02]" />
             </div>
           </div>
         </div>
@@ -310,7 +310,7 @@ const Index = () => {
       {/* GALERÍA */}
       <section className="section-padding bg-background">
         <div className="container">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-10 md:mb-12">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-10 md:mb-12" data-reveal>
             <div>
               <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Galería</span>
               <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
@@ -330,13 +330,18 @@ const Index = () => {
               { src: galleryMilk, alt: "Leche fresca", span: "aspect-square" },
               { src: heroFarm, alt: "Animales pastando al amanecer", span: "aspect-square" },
             ].map((img, i) => (
-              <div key={i} className={`overflow-hidden rounded-2xl group shadow-soft hover:shadow-elegant transition-smooth ${img.span}`}>
+              <div
+                key={i}
+                data-reveal
+                data-reveal-delay={String((i % 4) + 1)}
+                className={`overflow-hidden rounded-2xl group shadow-soft hover:shadow-elegant transition-smooth ${img.span}`}
+              >
                 <img
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
                   decoding="async"
-                  className="h-full w-full object-cover group-hover:scale-105 transition-smooth duration-700"
+                  className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
                 />
               </div>
             ))}

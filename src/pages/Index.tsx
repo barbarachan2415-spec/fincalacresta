@@ -410,6 +410,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </main>
 
       {/* FOOTER */}
       <footer className="bg-primary text-primary-foreground/80 py-8 md:py-10 pb-24 md:pb-10 border-t border-primary-foreground/10">

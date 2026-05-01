@@ -36,12 +36,20 @@ const Index = () => {
   useReveal();
   return (
     <div className="min-h-screen bg-background">
+      {/* Skip to content for keyboard users */}
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-md focus:bg-primary focus:text-primary-foreground focus:shadow-elegant"
+      >
+        Saltar al contenido
+      </a>
+
       {/* Floating WhatsApp button */}
       <a
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contactar por WhatsApp"
+        aria-label="Contactar a Finca La Cresta por WhatsApp"
         className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-glow hover:scale-110 transition-smooth animate-float"
       >
         <WhatsAppIcon className="h-6 w-6 md:h-7 md:w-7" />
@@ -49,8 +57,8 @@ const Index = () => {
 
       {/* NAV */}
       <header className="absolute top-0 left-0 right-0 z-30">
-        <nav className="container flex items-center justify-between py-5 md:py-6 gap-3">
-          <a href="#" className="flex items-center gap-2 text-primary-foreground min-w-0">
+        <nav className="container flex items-center justify-between py-5 md:py-6 gap-3" aria-label="Principal">
+          <a href="#" className="flex items-center gap-2 text-primary-foreground min-w-0" aria-label="Finca La Cresta — Inicio">
             <div className="flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-full bg-accent flex-shrink-0">
               <Leaf className="h-4 w-4 md:h-5 md:w-5 text-accent-foreground" />
             </div>

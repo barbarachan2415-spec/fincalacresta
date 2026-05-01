@@ -18,6 +18,7 @@ import galleryBuffalo from "@/assets/gallery-buffalo.jpg";
 import galleryMilk from "@/assets/gallery-milk.jpg";
 import galleryFarm from "@/assets/gallery-farm.jpg";
 import galleryCow from "@/assets/gallery-cow.jpg";
+import { useReveal } from "@/hooks/use-reveal";
 
 const WHATSAPP_NUMBER = "50766785280";
 const WHATSAPP_MESSAGE = encodeURIComponent(
@@ -32,6 +33,7 @@ const WhatsAppIcon = ({ className = "" }: { className?: string }) => (
 );
 
 const Index = () => {
+  useReveal();
   return (
     <div className="min-h-screen bg-background">
       {/* Floating WhatsApp button */}
@@ -133,7 +135,7 @@ const Index = () => {
       {/* SOBRE NOSOTROS */}
       <section id="nosotros" className="section-padding bg-gradient-cream">
         <div className="container grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <div className="lg:col-span-5 relative mb-10 lg:mb-0">
+          <div className="lg:col-span-5 relative mb-10 lg:mb-0" data-reveal>
             <div className="relative rounded-3xl overflow-hidden shadow-elegant">
               <img src={galleryBuffalo} alt="Búfalo en pastizal" loading="lazy" decoding="async" width={1024} height={1024} className="w-full aspect-[4/5] object-cover" />
             </div>
@@ -144,7 +146,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-7 lg:pl-8">
+          <div className="lg:col-span-7 lg:pl-8" data-reveal data-reveal-delay="1">
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Sobre Nosotros</span>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
               Una historia de campo, familia y constancia.
@@ -167,7 +169,7 @@ const Index = () => {
       {/* PRODUCTOS */}
       <section id="productos" className="section-padding bg-background">
         <div className="container">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl" data-reveal>
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Productos</span>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
               Leche fresca, directa del pastizal.
@@ -200,9 +202,11 @@ const Index = () => {
                 tagClass: "bg-accent text-accent-foreground",
                 accent: "from-accent to-accent",
               },
-            ].map((p) => (
+            ].map((p, i) => (
               <article
                 key={p.title}
+                data-reveal
+                data-reveal-delay={String(i + 1)}
                 className="group relative overflow-hidden rounded-3xl border border-border bg-card p-6 md:p-8 shadow-soft hover:shadow-elegant transition-smooth hover:-translate-y-1 hover:border-primary/20 flex flex-col sm:last:[&:nth-child(odd)]:col-span-2 md:last:[&:nth-child(odd)]:col-span-1"
               >
                 <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${p.accent}`} />
@@ -229,7 +233,7 @@ const Index = () => {
           backgroundSize: '32px 32px'
         }} />
         <div className="container relative">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl" data-reveal>
             <span className="text-xs uppercase tracking-[0.25em] text-accent font-semibold">¿Por qué elegirnos?</span>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-balance">
               Calidad que se nota desde el pasto hasta tu negocio.
@@ -244,9 +248,11 @@ const Index = () => {
               { icon: ShieldCheck, title: "Supervisión del MIDA", desc: "Controles oficiales de salud y calidad de los animales." },
               { icon: CheckCircle2, title: "Producto fresco y confiable", desc: "Distribución directa, sin intermediarios ni demoras." },
               { icon: MapPin, title: "Origen Panamá Oeste", desc: "Desde La Cresta, Bejuco, corazón agrícola de Panamá Oeste." },
-            ].map(({ icon: Icon, title, desc }) => (
+            ].map(({ icon: Icon, title, desc }, i) => (
               <div
                 key={title}
+                data-reveal
+                data-reveal-delay={String((i % 3) + 1)}
                 className="group rounded-3xl border border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur-sm p-6 md:p-8 hover:bg-primary-foreground/10 hover:border-accent/40 hover:-translate-y-1 transition-smooth"
               >
                 <div className="h-12 w-12 rounded-xl bg-accent flex items-center justify-center text-accent-foreground group-hover:scale-110 transition-smooth">
@@ -263,7 +269,7 @@ const Index = () => {
       {/* SERVICIOS */}
       <section id="servicios" className="section-padding bg-gradient-cream">
         <div className="container grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
+          <div data-reveal>
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Servicios</span>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
               Distribución directa, flexible y puntual.
@@ -278,8 +284,8 @@ const Index = () => {
                 { icon: Clock, title: "Distribución desde 7:00 a.m.", desc: "Recibe tu producto fresco al inicio del día." },
                 { icon: MapPin, title: "Retiro en finca disponible", desc: "Visítanos en La Cresta, Bejuco." },
                 { icon: CheckCircle2, title: "Flexibilidad según cliente", desc: "Volúmenes y horarios adaptados a tu operación." },
-              ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="flex gap-4 items-start">
+              ].map(({ icon: Icon, title, desc }, i) => (
+                <div key={title} data-reveal data-reveal-delay={String(i + 1)} className="flex gap-4 items-start">
                   <div className="flex-shrink-0 h-11 w-11 md:h-12 md:w-12 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shadow-soft">
                     <Icon className="h-5 w-5" />
                   </div>
@@ -292,10 +298,10 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative" data-reveal data-reveal-delay="2">
             <div className="grid grid-cols-2 gap-4 md:gap-5">
-              <img src={galleryFarm} alt="Pastizales de la finca" loading="lazy" decoding="async" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full" />
-              <img src={galleryMilk} alt="Leche fresca embotellada" loading="lazy" decoding="async" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full mt-10 md:mt-12" />
+              <img src={galleryFarm} alt="Pastizales de la finca" loading="lazy" decoding="async" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full transition-transform duration-700 hover:scale-[1.02]" />
+              <img src={galleryMilk} alt="Leche fresca embotellada" loading="lazy" decoding="async" width={1024} height={1024} className="rounded-3xl shadow-elegant aspect-[3/4] object-cover w-full mt-10 md:mt-12 transition-transform duration-700 hover:scale-[1.02]" />
             </div>
           </div>
         </div>
@@ -304,7 +310,7 @@ const Index = () => {
       {/* GALERÍA */}
       <section className="section-padding bg-background">
         <div className="container">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-10 md:mb-12">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-10 md:mb-12" data-reveal>
             <div>
               <span className="text-xs uppercase tracking-[0.25em] text-primary font-semibold">Galería</span>
               <h2 className="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
@@ -324,13 +330,18 @@ const Index = () => {
               { src: galleryMilk, alt: "Leche fresca", span: "aspect-square" },
               { src: heroFarm, alt: "Animales pastando al amanecer", span: "aspect-square" },
             ].map((img, i) => (
-              <div key={i} className={`overflow-hidden rounded-2xl group shadow-soft hover:shadow-elegant transition-smooth ${img.span}`}>
+              <div
+                key={i}
+                data-reveal
+                data-reveal-delay={String((i % 4) + 1)}
+                className={`overflow-hidden rounded-2xl group shadow-soft hover:shadow-elegant transition-smooth ${img.span}`}
+              >
                 <img
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
                   decoding="async"
-                  className="h-full w-full object-cover group-hover:scale-105 transition-smooth duration-700"
+                  className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
                 />
               </div>
             ))}
@@ -343,7 +354,7 @@ const Index = () => {
         <img src={heroFarm} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-primary/85" />
         <div className="container relative">
-          <div className="max-w-3xl mx-auto text-center text-primary-foreground">
+          <div className="max-w-3xl mx-auto text-center text-primary-foreground" data-reveal>
             <span className="inline-block text-[11px] md:text-xs uppercase tracking-[0.25em] md:tracking-[0.3em] text-accent font-semibold">Trabajemos juntos</span>
             <h2 className="mt-4 md:mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-semibold leading-[1.05] text-balance">
               ¿Buscas un proveedor confiable de leche fresca?
@@ -369,18 +380,18 @@ const Index = () => {
             </div>
 
             <div className="mt-12 md:mt-16 grid sm:grid-cols-3 gap-4 md:gap-5 text-left">
-              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
+              <div data-reveal data-reveal-delay="1" className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 hover:-translate-y-0.5 transition-smooth">
                 <MessageCircle className="h-6 w-6 text-accent" />
                 <p className="mt-3 text-xs uppercase tracking-wider text-primary-foreground/70">WhatsApp</p>
                 <p className="font-semibold mt-1 break-words">+507 6678-5280</p>
               </div>
-              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
+              <div data-reveal data-reveal-delay="2" className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 hover:-translate-y-0.5 transition-smooth">
                 <MapPin className="h-6 w-6 text-accent" />
                 <p className="mt-3 text-xs uppercase tracking-wider text-primary-foreground/70">Ubicación</p>
                 <p className="font-semibold mt-1">La Cresta, Bejuco</p>
                 <p className="text-sm text-primary-foreground/70">Panamá Oeste</p>
               </div>
-              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
+              <div data-reveal data-reveal-delay="3" className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 hover:-translate-y-0.5 transition-smooth">
                 <Clock className="h-6 w-6 text-accent" />
                 <p className="mt-3 text-xs uppercase tracking-wider text-primary-foreground/70">Distribución</p>
                 <p className="font-semibold mt-1">Desde 7:00 a.m.</p>

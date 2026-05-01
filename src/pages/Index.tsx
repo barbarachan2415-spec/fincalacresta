@@ -354,7 +354,7 @@ const Index = () => {
         <img src={heroFarm} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-primary/85" />
         <div className="container relative">
-          <div className="max-w-3xl mx-auto text-center text-primary-foreground">
+          <div className="max-w-3xl mx-auto text-center text-primary-foreground" data-reveal>
             <span className="inline-block text-[11px] md:text-xs uppercase tracking-[0.25em] md:tracking-[0.3em] text-accent font-semibold">Trabajemos juntos</span>
             <h2 className="mt-4 md:mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-semibold leading-[1.05] text-balance">
               ¿Buscas un proveedor confiable de leche fresca?
@@ -380,18 +380,18 @@ const Index = () => {
             </div>
 
             <div className="mt-12 md:mt-16 grid sm:grid-cols-3 gap-4 md:gap-5 text-left">
-              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
+              <div data-reveal data-reveal-delay="1" className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 hover:-translate-y-0.5 transition-smooth">
                 <MessageCircle className="h-6 w-6 text-accent" />
                 <p className="mt-3 text-xs uppercase tracking-wider text-primary-foreground/70">WhatsApp</p>
                 <p className="font-semibold mt-1 break-words">+507 6678-5280</p>
               </div>
-              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
+              <div data-reveal data-reveal-delay="2" className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 hover:-translate-y-0.5 transition-smooth">
                 <MapPin className="h-6 w-6 text-accent" />
                 <p className="mt-3 text-xs uppercase tracking-wider text-primary-foreground/70">Ubicación</p>
                 <p className="font-semibold mt-1">La Cresta, Bejuco</p>
                 <p className="text-sm text-primary-foreground/70">Panamá Oeste</p>
               </div>
-              <div className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 transition-smooth">
+              <div data-reveal data-reveal-delay="3" className="rounded-2xl bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 p-5 md:p-6 hover:bg-primary-foreground/15 hover:border-accent/30 hover:-translate-y-0.5 transition-smooth">
                 <Clock className="h-6 w-6 text-accent" />
                 <p className="mt-3 text-xs uppercase tracking-wider text-primary-foreground/70">Distribución</p>
                 <p className="font-semibold mt-1">Desde 7:00 a.m.</p>

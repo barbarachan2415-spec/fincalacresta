@@ -13,11 +13,11 @@ import {
   Milk,
   ArrowRight,
 } from "lucide-react";
-import heroFarm from "@/assets/hero-farm.jpg";
-import galleryBuffalo from "@/assets/gallery-buffalo.jpg";
-import galleryMilk from "@/assets/gallery-milk.jpg";
-import galleryFarm from "@/assets/gallery-farm.jpg";
-import galleryCow from "@/assets/gallery-cow.jpg";
+import heroFarm from "@/assets/hero-farm.webp";
+import galleryBuffalo from "@/assets/gallery-buffalo.webp";
+import galleryMilk from "@/assets/gallery-milk.webp";
+import galleryFarm from "@/assets/gallery-farm.webp";
+import galleryCow from "@/assets/gallery-cow.webp";
 import { useReveal } from "@/hooks/use-reveal";
 
 const WHATSAPP_NUMBER = "50766785280";

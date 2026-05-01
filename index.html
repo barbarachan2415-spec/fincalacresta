@@ -46,11 +46,14 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://fincalacresta.com/#business",
       "name": "Finca La Cresta",
-      "description": "Productores de leche fresca de búfalo y vaca en Panamá Oeste. Producción natural y responsable, con supervisión del MIDA y entrega directa a queserías y negocios locales desde las 7am.",
+      "description": "Productores de leche fresca de búfalo y vaca en Panamá Oeste. Producción natural y responsable, con supervisión del MIDA y entrega directa a queserías y negocios locales desde las 7:00 a.m.",
       "url": "https://fincalacresta.com",
-      "telephone": "+50766785280",
-      "image": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a2465d32-f858-432f-a693-1216b39a0b4d/id-preview-100db84b--08e1bc8a-51d3-4775-8e99-0a8b4acb0f58.lovable.app-1777326657056.png",
+      "telephone": "+507 6678-5280",
+      "priceRange": "$$",
+      "image": "https://fincalacresta.com/og-image.jpg",
+      "logo": "https://fincalacresta.com/favicon.svg",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "La Cresta, Bejuco, Panamá Oeste",
@@ -58,13 +61,28 @@
         "addressRegion": "Panamá Oeste",
         "addressCountry": "PA"
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+50766785280",
-        "contactType": "sales",
-        "areaServed": "PA",
-        "availableLanguage": ["Spanish"]
-      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+507 6678-5280",
+          "contactType": "sales",
+          "areaServed": ["Bejuco", "Capira", "Panamá Oeste"],
+          "availableLanguage": ["Spanish"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+507 6678-5280",
+          "contactType": "customer service",
+          "contactOption": "TollFree",
+          "areaServed": "PA",
+          "availableLanguage": ["Spanish"]
+        }
+      ],
+      "areaServed": [
+        { "@type": "City", "name": "Bejuco" },
+        { "@type": "City", "name": "Capira" },
+        { "@type": "AdministrativeArea", "name": "Panamá Oeste" }
+      ],
       "sameAs": [
         "https://wa.me/50766785280"
       ],
@@ -80,7 +98,71 @@
           "opens": "06:00",
           "closes": "17:00"
         }
-      ]
+      ],
+      "hoursAvailable": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "name": "Entrega y distribución",
+          "description": "Distribución directa de leche fresca desde las 7:00 a.m.",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "07:00",
+          "closes": "17:00"
+        }
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Leche de Búfalo Fresca",
+            "category": "Lácteos",
+            "description": "Leche fresca de búfalo, cremosa y rica en proteínas. Ideal para queserías y derivados artesanales."
+          },
+          "areaServed": ["Bejuco", "Capira", "Panamá Oeste"],
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Leche de Vaca Fresca",
+            "category": "Lácteos",
+            "description": "Leche fresca de vaca, natural y de alta calidad para lecherías, queserías y negocios locales."
+          },
+          "areaServed": ["Bejuco", "Capira", "Panamá Oeste"],
+          "availability": "https://schema.org/InStock"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Finca La Cresta",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Venta y distribución de leche de búfalo",
+              "areaServed": ["Bejuco", "Capira", "Panamá Oeste"]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Venta y distribución de leche de vaca",
+              "areaServed": ["Bejuco", "Capira", "Panamá Oeste"]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Entrega directa a queserías y negocios locales",
+              "areaServed": ["Bejuco", "Capira", "Panamá Oeste"]
+            }
+          }
+        ]
+      }
     }
     </script>
 

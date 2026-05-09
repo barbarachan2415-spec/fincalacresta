@@ -22,7 +22,7 @@ import { useReveal } from "@/hooks/use-reveal";
 
 const WHATSAPP_NUMBER = "50766785280";
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Hola, vi su página web de Finca La Cresta y me gustaría recibir más información sobre sus productos."
+  "Hola, vi su página web de Finca La Cresta. Me interesa recibir leche fresca para mi negocio. ¿Pueden darme información sobre precios y disponibilidad?"
 );
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
@@ -273,7 +273,7 @@ const Index = () => {
               { icon: Award, title: "+10 años de experiencia", desc: "Una década perfeccionando la producción láctea local." },
               { icon: ShieldCheck, title: "Supervisión del MIDA", desc: "Controles oficiales de salud y calidad de los animales." },
               { icon: CheckCircle2, title: "Producto fresco y confiable", desc: "Distribución directa, sin intermediarios ni demoras." },
-              { icon: MapPin, title: "Origen Panamá Oeste", desc: "Desde La Cresta, Bejuco, corazón agrícola de Panamá Oeste." },
+              { icon: Milk, title: "Mayor rendimiento quesero", desc: "Con leche de búfalo produces más queso con menos litros. Ideal para queserías que buscan mejor rentabilidad." },
             ].map(({ icon: Icon, title, desc }, i) => (
               <div
                 key={title}
@@ -430,15 +430,56 @@ const Index = () => {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-primary text-primary-foreground/80 py-8 md:py-10 pb-24 md:pb-10 border-t border-primary-foreground/10">
-        <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-center md:text-left">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent">
-              <Leaf className="h-4 w-4 text-accent-foreground" />
+      <footer className="bg-primary text-primary-foreground/80 py-10 md:py-14 pb-24 md:pb-14 border-t border-primary-foreground/10">
+        <div className="container">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-10 mb-10">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center gap-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent">
+                  <Leaf className="h-4 w-4 text-accent-foreground" />
+                </div>
+                <span className="font-display text-base text-primary-foreground font-semibold">Finca La Cresta</span>
+              </div>
+              <p className="mt-3 text-sm text-primary-foreground/70 leading-relaxed">
+                Producción y venta de leche fresca de búfalo y vaca en La Cresta, Bejuco, Panamá Oeste.
+              </p>
             </div>
-            <span className="font-display text-base text-primary-foreground font-semibold">Finca La Cresta</span>
+
+            {/* Links */}
+            <div>
+              <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 font-semibold mb-4">Navegación</h3>
+              <ul className="space-y-2.5 text-sm">
+                <li><a href="#nosotros" className="hover:text-accent transition-smooth">Nosotros</a></li>
+                <li><a href="#productos" className="hover:text-accent transition-smooth">Productos</a></li>
+                <li><a href="#servicios" className="hover:text-accent transition-smooth">Servicios</a></li>
+                <li><a href="#contacto" className="hover:text-accent transition-smooth">Contacto</a></li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 font-semibold mb-4">Contacto</h3>
+              <ul className="space-y-2.5 text-sm">
+                <li className="flex items-center gap-2">
+                  <Phone className="h-4 w-4 text-accent" aria-hidden="true" />
+                  <a href="tel:+50766785280" className="hover:text-accent transition-smooth">+507 6678-5280</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <WhatsAppIcon className="h-4 w-4 text-accent" />
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">WhatsApp</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Clock className="h-4 w-4 text-accent" aria-hidden="true" />
+                  <span>Lun–Sáb · 7:00 a.m.</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <p>© {new Date().getFullYear()} Finca La Cresta · La Cresta, Bejuco, Panamá Oeste</p>
+
+          <div className="border-t border-primary-foreground/10 pt-6 text-xs sm:text-sm text-center md:text-left text-primary-foreground/60">
+            <p>© {new Date().getFullYear()} Finca La Cresta · La Cresta, Bejuco, Panamá Oeste</p>
+          </div>
         </div>
       </footer>
     </div>

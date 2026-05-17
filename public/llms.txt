@@ -1,0 +1,14 @@
+# Finca La Cresta
+
+> Finca en La Cresta, Bejuco, Panamá Oeste, dedicada a la producción y distribución de leche fresca de búfalo y vaca para queserías, negocios locales y compradores directos.
+
+Producción natural con supervisión del MIDA y entrega directa desde las 7:00 a.m. en Bejuco, Capira y Panamá Oeste. Contacto por WhatsApp: +507 6678-5280.
+
+## Pages
+
+- [Inicio](/): Resumen de la finca, productos y contacto.
+- [Nosotros](/#nosotros): Historia y filosofía de Finca La Cresta.
+- [Productos](/#productos): Leche fresca de búfalo y vaca.
+- [Diferenciadores](/#diferenciadores): Por qué elegir nuestra leche.
+- [Servicios](/#servicios): Venta y distribución a queserías y negocios.
+- [Contacto](/#contacto): WhatsApp, ubicación y horarios.
